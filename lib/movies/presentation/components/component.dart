@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/core/network/api_constance.dart';
 import 'package:movie_app/core/utils/eunms.dart';
-import 'package:movie_app/movies/presentation/controller/movies_bloc.dart';
-import 'package:movie_app/movies/presentation/controller/movies_states.dart';
+import 'package:movie_app/movies/presentation/controller/movies_bloc/movies_bloc.dart';
+import 'package:movie_app/movies/presentation/controller/movies_bloc/movies_states.dart';
+import 'package:movie_app/movies/presentation/screens/movie_details_screen.dart';
 
 class PopularComponent extends StatelessWidget {
   const PopularComponent({super.key});
@@ -39,7 +40,11 @@ class PopularComponent extends StatelessWidget {
                       padding: const EdgeInsets.only(right: 8.0),
                       child: InkWell(
                         onTap: () {
-                          /// TODO : NAVIGATE TO  MOVIE DETAILS
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      MovieDetailScreen(id: movie.id)));
                         },
                         child: ClipRRect(
                           borderRadius:
@@ -102,7 +107,11 @@ class TopRatedComponent extends StatelessWidget {
                       padding: const EdgeInsets.only(right: 8.0),
                       child: InkWell(
                         onTap: () {
-                          /// TODO : NAVIGATE TO  MOVIE DETAILS
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      MovieDetailScreen(id: movie.id)));
                         },
                         child: ClipRRect(
                           borderRadius:

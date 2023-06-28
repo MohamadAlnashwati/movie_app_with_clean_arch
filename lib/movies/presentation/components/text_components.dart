@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:movie_app/core/utils/app_string.dart';
 
 class MoviesType extends StatelessWidget {
   final String nameType;
@@ -31,7 +32,7 @@ class MoviesType extends StatelessWidget {
               child: Row(
                 children: [
                   Text(
-                    'See More',
+                    AppString.seeMore,
                     style: TextStyle(
                       color: Colors.white,
                     ),

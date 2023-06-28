@@ -3,14 +3,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/core/services_locator/services_locator.dart';
+import 'package:movie_app/core/utils/app_string.dart';
 import 'package:movie_app/movies/presentation/components/component.dart';
 import 'package:movie_app/movies/presentation/components/now_playing_component.dart';
 import 'package:movie_app/movies/presentation/components/text_components.dart';
-import 'package:movie_app/movies/presentation/controller/movies_bloc.dart';
-import 'package:movie_app/movies/presentation/controller/movies_events.dart';
+import 'package:movie_app/movies/presentation/controller/movies_bloc/movies_bloc.dart';
+import 'package:movie_app/movies/presentation/controller/movies_bloc/movies_events.dart';
 
 class MoviesScreen extends StatelessWidget {
-  MoviesScreen({Key? key}) : super(key: key);
+  const MoviesScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,6 @@ class MoviesScreen extends StatelessWidget {
         ..add(GetPopularMoviesEvent())
         ..add(GetTopRatedMoviesEvent()),
       child: Scaffold(
-        backgroundColor: Colors.grey.shade900,
         body: SingleChildScrollView(
           key: const Key('movieScrollView'),
           child: Column(
@@ -28,12 +28,12 @@ class MoviesScreen extends StatelessWidget {
             children: [
               const NowPlayingComponent(),
               MoviesType(
-                nameType: 'Popular',
+                nameType: AppString.popular,
                 onTap: () {},
               ),
               const PopularComponent(),
               MoviesType(
-                nameType: 'Top Rated',
+                nameType: AppString.topRated,
                 onTap: () {},
               ),
               const TopRatedComponent(),

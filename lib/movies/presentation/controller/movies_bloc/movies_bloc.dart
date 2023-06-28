@@ -5,8 +5,8 @@ import 'package:movie_app/core/utils/eunms.dart';
 import 'package:movie_app/movies/domain/usecases/get_now_playing_usecase.dart';
 import 'package:movie_app/movies/domain/usecases/get_popular_movies.dart';
 import 'package:movie_app/movies/domain/usecases/get_top_rated_movies.dart';
-import 'package:movie_app/movies/presentation/controller/movies_events.dart';
-import 'package:movie_app/movies/presentation/controller/movies_states.dart';
+import 'package:movie_app/movies/presentation/controller/movies_bloc/movies_events.dart';
+import 'package:movie_app/movies/presentation/controller/movies_bloc/movies_states.dart';
 
 class MoviesBloc extends Bloc<MoviesEvents, MoviesState> {
   final GetNowPlayingMoviesUsecase getNowPlayingMoviesUsecase;
@@ -19,7 +19,6 @@ class MoviesBloc extends Bloc<MoviesEvents, MoviesState> {
   ) : super(const MoviesState()) {
     on<GetNowPlayingMoviesEvent>(_getNowPlayingMovies);
     on<GetPopularMoviesEvent>(_getPopularMovies);
-
     on<GetTopRatedMoviesEvent>(_getTopRatedMovies);
   }
 

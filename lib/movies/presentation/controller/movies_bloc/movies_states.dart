@@ -3,12 +3,15 @@ import 'package:movie_app/core/utils/eunms.dart';
 import 'package:movie_app/movies/domain/entities/movie.dart';
 
 class MoviesState extends Equatable {
+  // Now Playing Movies
   final List<Movie> nowPlayingMovies;
   final RequestState nowPlayingState;
   final String nowPlayingMessage;
+  // Popular Movies
   final List<Movie> popularMovies;
   final RequestState popularState;
   final String popularMessage;
+  // Top Rated Movies
   final List<Movie> topRatedMovies;
   final RequestState topRatedState;
   final String topRatedMessage;
